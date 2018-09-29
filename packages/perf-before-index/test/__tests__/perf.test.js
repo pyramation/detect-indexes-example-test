@@ -25,25 +25,22 @@ describe('database', () => {
     });
   });
   describe('performance', () => {
-    it('updated query', async () => {
+    it('updated query detects 3 missing indexes', async () => {
       const query = readFileSync(__dirname + '/queries/updated.sql').toString();
       const results = await db.any(query);
-      console.log(results);
-      expect(results.length).toBe(0);
+      expect(results.length).toBe(3);
     });
-    it('simple query', async () => {
+    it('simple query detects 3 missing indexes', async () => {
       const query = readFileSync(__dirname + '/queries/simple.sql').toString();
       const results = await db.any(query);
-      console.log(results);
-      expect(results.length).toBe(0);
+      expect(results.length).toBe(3);
     });
-    it('original query', async () => {
+    it('original query detects 3 missing indexes', async () => {
       const query = readFileSync(
         __dirname + '/queries/original.sql'
       ).toString();
       const results = await db.any(query);
-      console.log(results);
-      expect(results.length).toBe(0);
+      expect(results.length).toBe(3);
     });
   });
 });
