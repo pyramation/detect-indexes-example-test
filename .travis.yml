@@ -10,24 +10,25 @@ node_js:
 services:
   - docker
 env:
-  global:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=password
-    - PGPORT=7777
-    - PGDATABASE=testing-db
-    - PGTEMPLATE_DATABASE=testing-template-db
-    - PGHOST=localhost
-    - PGPASSWORD=password
-    - PGUSER=postgres
-    - APP_USER=app_user
-    - APP_PASSWORD=app_password
-  matrix:
-    - PACKAGE=packages/perf-before-index
-    - PACKAGE=packages/perf-after-index
+  - POSTGRES_USER=postgres
+  - POSTGRES_PASSWORD=password
+  - PGPORT=7777
+  - PGDATABASE=testing-db
+  - PGTEMPLATE_DATABASE=testing-template-db
+  - PGHOST=localhost
+  - PGPASSWORD=password
+  - PGUSER=postgres
+  - APP_USER=app_user
+  - APP_PASSWORD=app_password
+  - PACKAGE=packages/perf-before-index
+  - PACKAGE=packages/perf-after-index
+  - PSIMAGE=postgres:10.3
+  - PSIMAGE=postgres:10.4
+  - PSIMAGE=postgres:10.5
 
 before_install:
   - yarn install
-  - docker run -p 7777:5432 --name postgres -v `pwd`/packages:/sql-extensions -v `pwd`/node_modules:/sql-modules -d postgres:10.5
+  - docker run -p 7777:5432 --name postgres -v `pwd`/packages:/sql-extensions -v `pwd`/node_modules:/sql-modules -d $PSIMAGE
   - sleep 3
   - docker exec -it postgres apt-get update
   - docker exec -it postgres apt-get install make -y
