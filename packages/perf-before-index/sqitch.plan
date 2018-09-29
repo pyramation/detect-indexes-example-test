@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=perf-before-index
+%uri=perf-before-index
+
+schemas/app_schema [app:schemas/app_public] 2018-09-29T17:36:08Z Dan Lynch <dlynch@Dans-MacBook-Pro.local> # import schema

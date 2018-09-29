@@ -1,0 +1,7 @@
+# perf-after-index extension
+comment = 'perf-after-index extension'
+default_version = '0.0.1'
+module_pathname = '$libdir/perf-after-index'
+requires = 'plpgsql,skitch-extension-default-roles,skitch-extension-defaults,skitch-extension-verify,app'
+relocatable = false
+superuser = false

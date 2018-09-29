@@ -1,0 +1,8 @@
+%syntax-version=1.0.0
+%project=perf-after-index
+%uri=perf-after-index
+  
+schemas/app_public/tables/employee/indexes/employee_company_id_idx [skitch-extension-default-roles:@0.0.7 skitch-extension-defaults:@0.0.7 skitch-extension-verify:@0.0.7 app:schemas/app_public/tables/review/table] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/app_public/tables/employee/indexes/employee_company_id_idx
+schemas/app_public/tables/review/indexes/review_company_id_idx 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/app_public/tables/review/indexes/review_company_id_idx
+schemas/app_public/tables/review/indexes/review_employee_id_idx 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/app_public/tables/review/indexes/review_employee_id_idx
+schemas/app_schema [app:schemas/app_public] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/app_schema

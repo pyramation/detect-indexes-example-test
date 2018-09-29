@@ -1,0 +1,8 @@
+# app extension
+comment = 'app extension'
+default_version = '0.0.1'
+module_pathname = '$libdir/app'
+requires = 'plpgsql,uuid-ossp,skitch-extension-default-roles,skitch-extension-defaults,skitch-extension-verify'
+relocatable = false
+superuser = false
+  
