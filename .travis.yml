@@ -22,11 +22,12 @@ env:
     - APP_USER=app_user
     - APP_PASSWORD=app_password
   matrix:
-    - PACKAGE=packages/perf-before-index
-    - PACKAGE=packages/perf-after-index
-    - PSIMAGE=postgres:10.3
-    - PSIMAGE=postgres:10.4
-    - PSIMAGE=postgres:10.5
+    - PSIMAGE=postgres:10.3 PACKAGE=packages/perf-before-index
+    - PSIMAGE=postgres:10.3 PACKAGE=packages/perf-after-index
+    - PSIMAGE=postgres:10.4 PACKAGE=packages/perf-before-index
+    - PSIMAGE=postgres:10.4 PACKAGE=packages/perf-after-index
+    - PSIMAGE=postgres:10.5 PACKAGE=packages/perf-before-index
+    - PSIMAGE=postgres:10.5 PACKAGE=packages/perf-after-index
 
 before_install:
   - yarn install
